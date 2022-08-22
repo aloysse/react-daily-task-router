@@ -1,8 +1,23 @@
 import "./App.css";
-import { HashRouter, NavLink, Routes, Route } from "react-router-dom";
+import {
+  HashRouter,
+  NavLink,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
+
+const LogOut = () => {
+  const navigate = useNavigate();
+  return <button onClick={() => navigate("/login")}>logout</button>;
+};
 
 const Todo = () => {
-  return <p>這是 Todo 頁面</p>;
+  return (
+    <>
+      <p>這是 Todo 頁面</p> <LogOut />
+    </>
+  );
 };
 const Login = () => {
   return <p>這是登入頁面</p>;
